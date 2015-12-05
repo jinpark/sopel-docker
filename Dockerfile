@@ -9,5 +9,8 @@ RUN pip3 install -r requirements.txt
 
 RUN useradd sopel
 USER sopel
-
-CMD sopel -c /sopel/default.cfg
+VOLUME /sopel
+ 
+ADD entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+CMD [""]
