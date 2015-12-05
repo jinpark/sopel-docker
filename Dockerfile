@@ -7,8 +7,6 @@ RUN apt-get install -y git build-essential python3 python3-dev python3-pip ca-ce
 ADD requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 
-RUN useradd sopel
-USER sopel
 VOLUME /sopel
  
 ADD docker-entrypoint.sh /entrypoint.sh

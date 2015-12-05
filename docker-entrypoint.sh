@@ -2,6 +2,7 @@
 
 TARGET_GID=$(stat -c "%g" /sopel)
 EXISTS=$(cat /etc/group | grep $TARGET_GID | wc -l)
+useradd sopel
 
 # Create new group using target GID and add sopel user
 if [ $EXISTS == "0" ]; then
@@ -13,4 +14,4 @@ else
   usermod -a -G $GROUP sopel
 fi
 
-sopel -c /sopel/default.cfg
+runuser -l sopel -c "sopel -c /sopel/default.cfg"
