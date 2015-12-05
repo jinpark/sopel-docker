@@ -11,6 +11,6 @@ RUN useradd sopel
 USER sopel
 VOLUME /sopel
  
-ADD entrypoint.sh /entrypoint.sh
+ADD docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 CMD [""]

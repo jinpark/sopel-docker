@@ -13,4 +13,4 @@ else
   usermod -a -G $GROUP sopel
 fi
 
-exec sopel -c /sopel/default.cfg
+sopel -c /sopel/default.cfg
